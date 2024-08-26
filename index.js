@@ -1,8 +1,11 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors')
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors())
 
 app.get('/players/nfl', async (req, res) => {
     try {
@@ -23,7 +26,7 @@ app.get('/players/nfl', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(3000, () => {
+    console.log(`Server is running on port 3000`);
 });
 
