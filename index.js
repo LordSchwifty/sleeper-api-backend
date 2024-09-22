@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 
 app.use(cors())
 
+app.get('/', (req, res) => {
+    res.send('API is working. Go to /players/nfl to get player data.');
+});
+
 app.get('/players/nfl', async (req, res) => {
     try {
         // Fetch data from Sleeper API
